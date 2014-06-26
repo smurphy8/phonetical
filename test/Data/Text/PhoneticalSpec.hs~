@@ -1,0 +1,37 @@
+{-# LANGUAGE OverloadedStrings #-}
+
+
+module Data.Text.PhoneticalSpec (main, spec) where
+
+import Test.Hspec
+import Data.Text
+import Data.Text.Phonetical
+
+
+main :: IO ()
+main = hspec spec
+
+spec :: Spec
+spec = do
+  describe "mkDictionary" $ do
+    it "should parse JSON into a dictionary" $ do
+
+  describe "phonetic" $ do
+    it "should translate the Text into Text with phonetic spelling" $ do
+      (phonetic testString) `shouldBe`  "x dot y results in Big O of n"
+  
+
+
+
+
+
+dictString :: Text
+dictString = "[{'find':'.', 'use':'dot' }  ,{'find':{'start':'O(','end':')'},'say':'Big O of '}]"
+
+
+testString :: Text
+testString = "x.y results in O(n)"
+
+
+
+

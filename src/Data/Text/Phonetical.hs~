@@ -1,0 +1,3 @@
+module Data.Text.Phonetical where
+
+import Data.Text.Phonetical.Internal

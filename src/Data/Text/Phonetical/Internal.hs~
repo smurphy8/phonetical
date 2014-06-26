@@ -1,0 +1,16 @@
+module Data.Text.Phonetical.Internal
+    (
+    ) where
+
+import Data.Text
+
+newtype Symbol = Symbol { getSymbol:: Text}
+ deriving (Eq,Show)
+
+  
+data DictionarySymbol = Find Symbol Text
+                      | Wrapped Symbol Symbol Text
+    deriving (Eq,Show)
+
+
+data Dictionary = [ DictionarySymbol ]
