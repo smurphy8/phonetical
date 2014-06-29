@@ -25,18 +25,14 @@ spec = do
 
 
 dictString :: ByteString
-dictString  = "[{
-                 \"find\":\".\"} ,
-                \"use\":\"dot\",
-                {\"use\":\"Big O of\",
-                \"find\":{\"start\":\"O(\",\"end\":\")\"}}]"
+dictString  = "[{ \"find\":\".\",\"use\":\"dot\"},{\"find\":{\"start\":\"O(\",\"end\":\")\"}, \"use\":\"Big O of \"}]"
 
 testParse :: (Result [DictionaryEntry])
 testParse = case (parseOnly json dictString) of
   Left s -> fail s
   Right r -> fromJSON r
 
-testEntry = [(Find (Simple (Symbol ".")) "dot") , (Find (Wrapped (Symbol "O(") (Symbol ")")) "Big O of")]
+testEntry = [(Find (Simple (Symbol ".")) " dot ") , (Find (Wrapped (Symbol "O(") (Symbol ")")) "Big O of")]
 
 testString :: Text
 testString = "x.y results in O(n)"

@@ -53,3 +53,7 @@ instance FromJSON DictionaryEntry where
   parseJSON _ = fail "Rule: Expecting Object received other"
   
     
+
+
+--------------------------------------
+
