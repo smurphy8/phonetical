@@ -4,10 +4,11 @@ Author:                 Scott <scott.murphy@plowtech.net>
 Maintainer:             Scott <scott.murphy@plowtech.net>
 License:                BSD3
 License-File:           LICENSE
--- Synopsis:               
--- Description:            
+Synopsis:               Create a text swapping for input text
+Description:            the phonetic function is the soul of the routine
 Cabal-Version:          >= 1.10
 Build-Type:             Simple
+
 
 Library
   Default-Language:     Haskell2010
@@ -37,4 +38,4 @@ Test-Suite spec
 
 Source-Repository head
   Type:                 git
---  Location:             
+Location:             https://github.com/smurphy8/phonetical.git

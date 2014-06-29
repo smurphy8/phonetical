@@ -32,7 +32,11 @@ testParse = case (parseOnly json dictString) of
   Left s -> fail s
   Right r -> fromJSON r
 
-testEntry = [(Find (Simple (Symbol ".")) " dot ") , (Find (Wrapped (Symbol "O(") (Symbol ")")) "Big O of")]
+testEntry = [ (Find (Simple (Symbol ".")) " dot ")
+            , (Find (Simple (Symbol ",")) " comma ")
+            , (Find (Simple (Symbol "-")) " dash ")
+            , (Find (Simple (Symbol "Lochen")) " Low Chen ")            
+            , (Find (Wrapped (Symbol "O(") (Symbol ")")) "Big O of")]
 
 testString :: Text
 testString = "x.y results in O(n)"

@@ -17,7 +17,8 @@ phonetic dict istr = case (parseOnly (parseAllInDictionary dict) istr) of
 parseAllInDictionary :: Dictionary -> Parser Text
 parseAllInDictionary dict = do
   plist <- many (mkReplacementParser dict)
-  return $ Data.Text.concat plist
+  rest  <- takeText
+  return $ append (Data.Text.concat plist) rest
   
 
 mkReplacementParser :: Dictionary -> Parser Text
